@@ -17,9 +17,9 @@
         <div v-if="state === 'edit'" class="add-item-form" >
         <input v-model="NewItem" type="text" placeholder="Add a New Item" @Keyup.enter=saveItem @Keyup.delete=DelItem />
         <button class="btn btn-primary" @click="saveItem" :disabled=" NewItem.length ===0">Submit</button>
-        <button  class="btn btn-cancel" @click=DelItem >Drop</button>
+        <button  class="btn btn-cancel" @click=DelItem >ClearAll</button>
     </div>
-    <ul  v-if="items.length !==0 " id="shopping-list">
+    <ul  v-if="items.length !==0 " id="shopping-list2">
             <li  v-for="item in items" :class="{strikeout: item.purchased, priority: item.highPriority}" @click=toggle(item)>{{ item.label }}</li>
         </ul>
          <p v-else >Fill some stuff 😆</p>
@@ -53,14 +53,18 @@
             methods:{
                 saveItem(NewItem,priority){
                     
-                    this.items.push({label: this.NewItem, purchased: false, highPriority: false},
+                    this.items.unshift({label: this.NewItem, purchased: false, highPriority: false},
                     );
 
                     this.NewItem=""
                     
                 },
                 DelItem(){
-                    this.items.pop();
+                  var n=  this.items.length
+                //   alert(n)
+                  for (var  i=0 ;i<n;i++ ){ 
+                     this.items.pop()
+                    }
                 },
                 ChangeState(newState){
                     this.state =newState;
