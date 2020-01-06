@@ -3,6 +3,9 @@
 
 Screen shots :
  
+Closed list view 
+![Screenshot](Pictures/CloList.png)
+
 Normal list view 
 ![Screenshot](Pictures/Norlist.png)
 
