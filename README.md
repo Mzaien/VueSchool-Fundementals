@@ -4,7 +4,7 @@
 Screen shots :
  
 Closed list view 
-![Screenshot](Pictures/ColList.png)
+![Screenshot](Pictures/Clolist.png)
 
 Normal list view 
 ![Screenshot](Pictures/Norlist.png)
